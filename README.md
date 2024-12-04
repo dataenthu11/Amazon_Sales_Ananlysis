@@ -74,7 +74,8 @@ AS ETS has better SD compared to other methods using ETS method to forecast sale
 
 ****###-- TOp 10 products --###****
 
-  ![Top 10 Products](https://github.com/user-attachments/assets/a4c0f16f-141b-485c-ad79-9ebd76f78563)
+![Top 10](https://github.com/user-attachments/assets/696d0f4c-fe50-4b3d-bb29-16dfc19c1a26)
+
 
 **##--Sales by State--###**
 
