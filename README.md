@@ -84,7 +84,8 @@ AS ETS has better SD compared to other methods using ETS method to forecast sale
 
 **##-- Top 10 Customers by Sales and Profit--##**
 
-  ![Top Customer](https://github.com/user-attachments/assets/acbf0070-704e-44d2-9b9a-72297a713398)
+![Top10Customer](https://github.com/user-attachments/assets/97661644-c2a1-459c-8e50-029277be0ade)
+
 
 # Calculate Shippingtime#
 
