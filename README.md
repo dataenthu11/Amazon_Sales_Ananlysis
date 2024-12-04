@@ -49,19 +49,14 @@ Folders:
 ##### Analysing Amazon Sales by Category,Product and Forecasting ###
 ##### Created on 12/3/2024 by Vaishnave Anantha ####
 
-
-
-
-
-#Category Sales and Profit 
+**#Category Sales and Profit** 
 
     ![Maximum Profit by Category](https://github.com/user-attachments/assets/c3b71e68-ec6e-4a99-a2cc-9d8163831fa7)
 
  
-###-- TIme Series Analysis and forecast --###
+****###-- TIme Series Analysis and forecast --###****
 
-Create a time series on Sales with table name Sales_P
-Creating timeplot to check trend & seasonality
+Create a time series on Sales with table name Sales_P and creating timeplot to check trend & seasonality
 Data has trend, taking first difference to remove trend 
 Series appear to have trend stationary use to investigate seasonality 
 ****Forecast with various methods 1.Seasonal Naive 2.ETS 3.ARIMA COmparing****
