@@ -58,9 +58,20 @@ Folders:
 Create a time series on Sales with table name Sales_P and creating timeplot to check trend & seasonality
 Data has trend, taking first difference to remove trend 
 Series appear to have trend stationary use to investigate seasonality 
-****Forecast with various methods 1.Seasonal Naive 2.ETS 3.ARIMA COmparing****
- SD and ACF to forecast based on the best SD using ETS 
+****Forecast with various methods 1.Seasonal Naive 2.ETS 3.ARIMA Comparing****
+Seasonal Naive produced a SD of 7655 extremely high,however ACF lies in range.
+Residual sd: 7655 in Snaive method ACF lies in range
+![ACF- Snaive](https://github.com/user-attachments/assets/375ed7ca-1c4b-4a52-b5e7-0ce49186a2b9)
 
+ETS method produced a SD of 4308,however ACF lies in range.
+Residual sd: 4308  in ETS method ACF lies in range
+![ACF_ets](https://github.com/user-attachments/assets/30cd2a8e-2893-4082-8c53-df77a4faa029)
+
+AIRMA method produced a SD of 4780 which is higher than ETS method and ACF lies in range.
+![ACF_ARIMA](https://github.com/user-attachments/assets/18092614-6dfe-4901-b7a2-2a96c976e16d)
+
+AS ETS has better SD compared to other methods using ETS method to forecast sales of 2016,2017
+ SD and ACF to forecast based on the best SD using ETS 
 ![Forecast using ETS](https://github.com/user-attachments/assets/fc3c216b-dc49-49d3-9cc4-d3cd68aff39c)
 
 
