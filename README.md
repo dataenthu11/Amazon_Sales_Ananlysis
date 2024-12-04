@@ -51,10 +51,9 @@ Folders:
 
 **#Category Sales and Profit** 
 
-    ![Maximum Profit by Category](https://github.com/user-attachments/assets/c3b71e68-ec6e-4a99-a2cc-9d8163831fa7)
-
- 
-****###-- TIme Series Analysis and forecast --###****
+![Maximum Profit by Category](https://github.com/user-attachments/assets/4af362e8-6966-461f-9ba6-2e2f49447f29)
+   
+ ****###-- TIme Series Analysis and forecast --###****
 
 Create a time series on Sales with table name Sales_P and creating timeplot to check trend & seasonality
 Data has trend, taking first difference to remove trend 
