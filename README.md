@@ -44,6 +44,7 @@ Script Name: amazon_sales_analysis.R
 ##### Created on 12/3/2024 by Vaishnave Anantha ####
 
 **#Category Sales and Profit** 
+The below plot shows the most profitable categories are in PAPER and BINDER categories
 
 ![Maximum Profit by Category](https://github.com/user-attachments/assets/4af362e8-6966-461f-9ba6-2e2f49447f29)
    
@@ -66,7 +67,7 @@ AIRMA method produced a SD of 4780 which is higher than ETS method and ACF lies 
 ![ACF_ARIMA](https://github.com/user-attachments/assets/18092614-6dfe-4901-b7a2-2a96c976e16d)
 
 AS ETS has better SD compared to other methods using ETS method to forecast sales of 2016,2017
- SD and ACF to forecast based on the best SD using ETS 
+
  
 ![Forecast using ETS](https://github.com/user-attachments/assets/fc3c216b-dc49-49d3-9cc4-d3cd68aff39c)
 
