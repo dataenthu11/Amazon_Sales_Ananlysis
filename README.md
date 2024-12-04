@@ -30,22 +30,16 @@ Include automated report generation in PDF/HTML using R Markdown.
 Perform more granular analysis, such as trends by city or customer demographics.
 
 
-Usage
-Prerequisites:
-
-Install the following packages: dplyr, readxl, tidyverse, lubridate, fpp2.
-Run the Script:
-
-Load the dataset (named Amazon_2_Raw in the script).
+Load the dataset (named Amazon_Sales in the script).
 Execute each section sequentially to generate visualizations and forecasts.
 Dataset Requirements:
 Columns: Order ID, Order Date, Ship Date, EmailID, Geography, Category, Product Name, Sales, Quantity, Profit.
 Output:
 
 
-File Structure
+**File Structure**
 Script Name: amazon_sales_analysis.R
-Folders:
+
 ##### Analysing Amazon Sales by Category,Product and Forecasting ###
 ##### Created on 12/3/2024 by Vaishnave Anantha ####
 
@@ -60,7 +54,8 @@ Data has trend, taking first difference to remove trend
 Series appear to have trend stationary use to investigate seasonality 
 ****Forecast with various methods 1.Seasonal Naive 2.ETS 3.ARIMA Comparing****
 Seasonal Naive produced a SD of 7655 extremely high,however ACF lies in range.
-Residual sd: 7655 in Snaive method ACF lies in range
+Residual sd: 7655 in Snaive method ACF has few outliers
+
 ![ACF- Snaive](https://github.com/user-attachments/assets/375ed7ca-1c4b-4a52-b5e7-0ce49186a2b9)
 
 ETS method produced a SD of 4308,however ACF lies in range.
@@ -72,6 +67,7 @@ AIRMA method produced a SD of 4780 which is higher than ETS method and ACF lies 
 
 AS ETS has better SD compared to other methods using ETS method to forecast sales of 2016,2017
  SD and ACF to forecast based on the best SD using ETS 
+ 
 ![Forecast using ETS](https://github.com/user-attachments/assets/fc3c216b-dc49-49d3-9cc4-d3cd68aff39c)
 
 
