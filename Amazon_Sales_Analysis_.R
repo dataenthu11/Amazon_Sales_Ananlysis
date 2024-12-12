@@ -11,7 +11,7 @@ install.packages("stringr")
 
 library(ggplot2)
 library(dplyr)
-library(tidyverse)
+
 library(fpp2)
 library(lubridate)
 library(stringr)
@@ -95,3 +95,63 @@ shipping_analysis <-Amazon_2_Raw %>%mutate(Shipping_Time =as.numeric(difftime(`S
 # Bubble Chart: Shipping Time vs Profit by Category--##
 ggplot(shipping_analysis,aes(x =Avg_Shipping_Time,y =Profit,size =Profit,label =Category))+geom_point(alpha =0.6,color ="purple")+geom_text(vjust =-0.5,size =3)+labs(title ="Shipping Efficiency: Time vs Profit",x ="Average Shipping Time (Days)",y ="Total Profit",size ="Profit")+theme_minimal()
 
+###Identify unique categories"
+unique(Amazon_Sales$Category)
+
+###Creating a new ctgy df###
+ctgy <- Amazon_Sales %>%
+select(2,6,8)
+
+
+
+
+###Plotting graph for category wise data###
+
+ library(dplyr)
+library(ggplot2)
+# Step 1: Extract year from `Order Date`
+ctgy <- ctgy %>%
+    
+
+ # Step 2: Summarize sales by year and category
+ sales_summary <- ctgy %>%
+      group_by(Year, Category) %>%
+      summarise(total_sales = sum(Sales), .groups = "drop")
+
+  # Step 3: Plot the graph
+   ggplot(sales_summary, aes(x = Year, y = total_sales, color = Category, group = Category)) +
+      geom_line() +
+      labs(title = "Category-wise Sales Over the Years",
+                     x = "Year",
+                     y = "Total Sales",
+                     color = "Category") +
+      theme_minimal()
+
+### Forecasting ###
+   
+   art<- ctgy %>%
+     filter(Category=='Art')
+   
+   art_monthly <- art %>%
+        mutate(YearMonth = floor_date(as.Date(`Order Date`, format = "%Y-%m-%d"), "month")) %>%
+          group_by(YearMonth) %>%
+       summarise(Sales = sum(Sales))  
+   art_P <- ts(art_monthly$Sales, start = c(2011, 1), frequency = 12)
+   autoplot(art_P)
+   view(art_monthly)
+    sn_art <- snaive(art_P)
+   print(summary(sn_art))
+   decompose(art_P) 
+   ets_art <-ets(art_P)
+   print(summary(ets_art))
+   checkresiduals(art_P)
+   frcst_art_sales<-forecast(art_P,h=24)
+   autoplot(frcst_art_sales)
+   
+   ### FInding yearly sales difference#####
+    art_changes <-  art_monthly %>%group_by(year) %>%
+    summarise(TotalSales=sum(Sales))
+   print(art_changes)
+     
+ art_changes$YOY <- (art_changes$TotalSales - lag(art_changes$TotalSales))/ lag(art_changes$TotalSales) * 100
+   print(art_changes)
