@@ -93,3 +93,16 @@ AS ETS has better SD compared to other methods using ETS method to forecast sale
 
 ![Shipping Efficiency](https://github.com/user-attachments/assets/e670750b-9d1c-4349-94f2-f8e88a4c1690)
 
+# Category Analysis - Art #
+![Art_Forecast](https://github.com/user-attachments/assets/5e1408d3-2596-48a0-baa5-d37697895e28)
+And calculating yearly growth
+> art_changes$YOY <- (art_changes$TotalSales - lag(art_changes$TotalSales))/ lag(art_changes$TotalSales) * 100
+> print(art_changes)
+# A tibble: 4 × 3
+   year TotalSales   YOY
+  <dbl>      <dbl> <dbl>
+1  2011      3380.  NA  
+2  2012      2035. -39.8
+3  2013      1116. -45.1
+4  2014      2681. 140. 
+
